@@ -1,0 +1,54 @@
+{
+    "name": "trapzpro/trading-tracker",
+    "description": "Package for tracking profits and losses from stock and options trading",
+    "keywords": [
+        "trapzpro",
+        "trading-tracker"
+    ],
+    "homepage": "https://github.com/trapzpro/trading-tracker",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Blake Weber",
+            "email": "trapz@protonmail.ch",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trapzpro\\TradingTracker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Trapzpro\\TradingTracker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Trapzpro\\TradingTracker\\TradingTrackerServiceProvider"
+            ],
+            "aliases": {
+                "TradingTracker": "Trapzpro\\TradingTracker\\TradingTrackerFacade"
+            }
+        }
+    }
+}
